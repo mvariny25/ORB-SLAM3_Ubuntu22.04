@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/robo-dude/ORB-SLAM3/Thirdparty/DBoW2/lib/libDBoW2.pdb"
-  "/home/robo-dude/ORB-SLAM3/Thirdparty/DBoW2/lib/libDBoW2.so"
+  "../lib/libDBoW2.pdb"
+  "../lib/libDBoW2.so"
   "CMakeFiles/DBoW2.dir/DBoW2/BowVector.cpp.o"
   "CMakeFiles/DBoW2.dir/DBoW2/BowVector.cpp.o.d"
   "CMakeFiles/DBoW2.dir/DBoW2/FORB.cpp.o"

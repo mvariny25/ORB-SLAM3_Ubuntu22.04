@@ -1,7 +1,7 @@
 CMakeFiles/g2o.dir/g2o/stuff/os_specific.c.o: \
- /home/robo-dude/ORB-SLAM3/Thirdparty/g2o/g2o/stuff/os_specific.c \
+ /home/michaelvariny/vo_system/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/os_specific.c \
  /usr/include/stdc-predef.h \
- /home/robo-dude/ORB-SLAM3/Thirdparty/g2o/g2o/stuff/os_specific.h \
+ /home/michaelvariny/vo_system/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/os_specific.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -22,5 +22,4 @@ CMakeFiles/g2o.dir/g2o/stuff/os_specific.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h \
- /usr/include/x86_64-linux-gnu/bits/select2.h \
- /usr/include/x86_64-linux-gnu/bits/select-decl.h
+ /usr/include/x86_64-linux-gnu/bits/select2.h

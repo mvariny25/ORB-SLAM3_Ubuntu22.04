@@ -49,3 +49,5 @@ __pycache__/
 
 # Ignore datasets directory
 datasets/
+Vocabulary/
+Vocabulary/*

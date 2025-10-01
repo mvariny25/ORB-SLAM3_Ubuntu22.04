@@ -49,4 +49,6 @@ __pycache__/
 
 # Ignore datasets directory
 datasets/
+Examples/
+Examples/*
 Vocabulary/ORBvoc.txt

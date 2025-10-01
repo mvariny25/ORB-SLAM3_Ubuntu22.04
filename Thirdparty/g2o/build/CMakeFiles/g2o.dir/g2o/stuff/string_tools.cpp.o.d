@@ -1,7 +1,7 @@
 CMakeFiles/g2o.dir/g2o/stuff/string_tools.cpp.o: \
- /home/michaelvariny/vo_system/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/string_tools.cpp \
+ /root/colcon_ws/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/string_tools.cpp \
  /usr/include/stdc-predef.h \
- /home/michaelvariny/vo_system/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/string_tools.h \
+ /root/colcon_ws/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/string_tools.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -160,8 +160,8 @@ CMakeFiles/g2o.dir/g2o/stuff/string_tools.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/michaelvariny/vo_system/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/macros.h \
- /home/michaelvariny/vo_system/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/os_specific.h \
+ /root/colcon_ws/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/macros.h \
+ /root/colcon_ws/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/os_specific.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/c++/11/cstdarg \
  /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \

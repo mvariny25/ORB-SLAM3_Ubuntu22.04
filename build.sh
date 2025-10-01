@@ -43,8 +43,8 @@
 set -e  # stop on first error
 
 # Paths
-ORB_SLAM3_DIR=~/vo_system/orb_src/ORB_SLAM3
-OPENCV_DIR=~/vo_system/orb_src/opencv/build  # where you built OpenCV 4.12
+ORB_SLAM3_DIR=~/colcon_ws/orb_src/ORB_SLAM3
+OPENCV_DIR=~/colcon_ws/orb_src/opencv/build  # where you built OpenCV 4.12
 
 # Clean any previous builds
 rm -rf $ORB_SLAM3_DIR/build
@@ -68,10 +68,11 @@ make -j$(nproc)
 
 # Build Sophus
 echo "Building Thirdparty/Sophus ..."
-cd $ORB_SLAM3_DIR/Thirdparty/Sophus
+cd $ORB_SLAM3_DIR/Thirdparty/Sophus 
 mkdir build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
+make install
 
 # Build ORB-SLAM3
 echo "Building ORB-SLAM3 ..."

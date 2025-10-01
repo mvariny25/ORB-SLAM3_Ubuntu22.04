@@ -217,6 +217,8 @@ void Viewer::Run()
     }
 
     float trackedImageScale = mpTracker->GetImageScale();
+    static int c = 0;
+    cv::Mat prev;
 
     cout << "Starting the Viewer" << endl;
     while(1)
@@ -334,6 +336,71 @@ void Viewer::Run()
             int height = toShow.rows * mImageViewerScale;
             cv::resize(toShow, toShow, cv::Size(width, height));
         }
+
+        static int frame_id = 0;
+        if (frame_id == 0 && c == 0){
+            prev = toShow;
+            frame_id++;
+            
+        }
+        bool diffs_matter = true;
+        bool save = false;
+        if (save == true){
+
+        double diff = 0.0;
+        if(prev.size() == toShow.size()){
+            diff = cv::norm(prev, toShow, cv::NORM_L2);
+            if (diff == 0.0){
+                cout << "Frames are Identical" << endl;
+        }
+        }
+
+        if (diffs_matter == true){
+
+        if(!toShow.empty() && diff != 0.0 && frame_id!=0){
+            if (frame_id == 1 && c == 1){
+                frame_id--;
+            }
+            std::ostringstream name;
+            name << "./../../../images/current_test/frame_" << frame_id << "_diff_" << std::to_string(diff) << ".png";
+            if (cv::imwrite(name.str(), toShow)){
+                cout << "Saved" << name.str() << endl;
+                // cout << "NORM DIFF WAS " << diff << endl;
+            }
+            else{
+                cout << "Failed to save " << name.str() << endl;
+            }
+            cv::imwrite("image.png", im);
+            cout << "Saving Image!" << endl;
+
+            frame_id++;
+        }
+        else{
+            cout << "Empty frame, not saved!" << endl;
+        }}
+        
+        else{
+       
+        if(!toShow.empty()){
+
+            std::ostringstream name;
+            name << "./../../../images/current_test/frame_" << frame_id << "_diff_" << std::to_string(diff) << ".png";
+            if (cv::imwrite(name.str(), toShow)){
+                cout << "Saved" << name.str() << endl;
+                // cout << "NORM DIFF WAS " << diff << endl;
+            }
+            else{
+                cout << "Failed to save " << name.str() << endl;
+            }
+            cv::imwrite("image.png", im);
+            cout << "Saving Image!" << endl;
+
+            frame_id++;
+        }
+        else{
+            cout << "Empty frame, not saved!" << endl;
+        }
+        }}
 
         cv::imshow("ORB-SLAM3: Current Frame",toShow);
         cv::waitKey(mT);

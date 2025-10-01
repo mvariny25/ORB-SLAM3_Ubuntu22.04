@@ -1,7 +1,7 @@
 CMakeFiles/g2o.dir/g2o/stuff/os_specific.c.o: \
- /home/michaelvariny/vo_system/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/os_specific.c \
+ /root/colcon_ws/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/os_specific.c \
  /usr/include/stdc-predef.h \
- /home/michaelvariny/vo_system/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/os_specific.h \
+ /root/colcon_ws/orb_src/ORB_SLAM3/Thirdparty/g2o/g2o/stuff/os_specific.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \

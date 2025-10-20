@@ -343,6 +343,7 @@ void Viewer::Run()
             frame_id++;
             
         }
+        // cout << "PLANNED PRINT" <<endl;
         bool diffs_matter = true;
         bool save = false;
         if (save == true){
@@ -361,8 +362,9 @@ void Viewer::Run()
             if (frame_id == 1 && c == 1){
                 frame_id--;
             }
+            cout << "Trying to save image!" << endl;
             std::ostringstream name;
-            name << "./../../../images/current_test/frame_" << frame_id << "_diff_" << std::to_string(diff) << ".png";
+            name << "/root/colcon_ws/images/current_test/frame_" << frame_id << "_diff_" << std::to_string(diff) << ".png";
             if (cv::imwrite(name.str(), toShow)){
                 cout << "Saved" << name.str() << endl;
                 // cout << "NORM DIFF WAS " << diff << endl;
@@ -371,7 +373,7 @@ void Viewer::Run()
                 cout << "Failed to save " << name.str() << endl;
             }
             cv::imwrite("image.png", im);
-            cout << "Saving Image!" << endl;
+            // cout << "Saving Image!" << endl;
 
             frame_id++;
         }
@@ -382,9 +384,9 @@ void Viewer::Run()
         else{
        
         if(!toShow.empty()){
-
+            cout << "Trying to save image!" << endl;
             std::ostringstream name;
-            name << "./../../../images/current_test/frame_" << frame_id << "_diff_" << std::to_string(diff) << ".png";
+            name << "/root/colcon_ws/images/current_test/frame_" << frame_id << "_diff_" << std::to_string(diff) << ".png";
             if (cv::imwrite(name.str(), toShow)){
                 cout << "Saved" << name.str() << endl;
                 // cout << "NORM DIFF WAS " << diff << endl;
@@ -393,7 +395,7 @@ void Viewer::Run()
                 cout << "Failed to save " << name.str() << endl;
             }
             cv::imwrite("image.png", im);
-            cout << "Saving Image!" << endl;
+            // cout << "Saving Image!" << endl;
 
             frame_id++;
         }
@@ -401,6 +403,8 @@ void Viewer::Run()
             cout << "Empty frame, not saved!" << endl;
         }
         }}
+
+        prev = toShow;
 
         cv::imshow("ORB-SLAM3: Current Frame",toShow);
         cv::waitKey(mT);

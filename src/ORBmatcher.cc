@@ -647,6 +647,8 @@ namespace ORB_SLAM3
 
     int ORBmatcher::SearchForInitialization(Frame &F1, Frame &F2, vector<cv::Point2f> &vbPrevMatched, vector<int> &vnMatches12, int windowSize)
     {
+        cout << "ORB MATHCER SEARCH FOR INIT BEING USED!" << endl;
+        //looks like initializing vectors
         int nmatches=0;
         vnMatches12 = vector<int>(F1.mvKeysUn.size(),-1);
 
@@ -657,6 +659,8 @@ namespace ORB_SLAM3
 
         vector<int> vMatchedDistance(F2.mvKeysUn.size(),INT_MAX);
         vector<int> vnMatches21(F2.mvKeysUn.size(),-1);
+
+        //iterate through the vnMatches12 vector?
 
         for(size_t i1=0, iend1=F1.mvKeysUn.size(); i1<iend1; i1++)
         {
@@ -682,12 +686,12 @@ namespace ORB_SLAM3
 
                 cv::Mat d2 = F2.mDescriptors.row(i2);
 
-                int dist = DescriptorDistance(d1,d2);
+                int dist = DescriptorDistance(d1,d2); //Distance vector between indices between frames
 
                 if(vMatchedDistance[i2]<=dist)
                     continue;
 
-                if(dist<bestDist)
+                if(dist<bestDist)//Checks for smalles distance
                 {
                     bestDist2=bestDist;
                     bestDist=dist;
@@ -699,7 +703,7 @@ namespace ORB_SLAM3
                 }
             }
 
-            if(bestDist<=TH_LOW)
+            if(bestDist<=TH_LOW) //if translation is too low: did we rotate?
             {
                 if(bestDist<(float)bestDist2*mfNNratio)
                 {
@@ -2011,6 +2015,7 @@ namespace ORB_SLAM3
 
     void ORBmatcher::ComputeThreeMaxima(vector<int>* histo, const int L, int &ind1, int &ind2, int &ind3)
     {
+        cout << "ORB MATCHER THREE MAXIMA BEING USED!" << endl;
         int max1=0;
         int max2=0;
         int max3=0;

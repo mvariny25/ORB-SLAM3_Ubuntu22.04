@@ -654,14 +654,18 @@ Eigen::Vector3f Frame::inRefCoordinates(Eigen::Vector3f pCw)
     return mRcw * pCw + mtcw;
 }
 
+//Reads frame, gets size bounds, if keypoitn is within bounds
 vector<size_t> Frame::GetFeaturesInArea(const float &x, const float  &y, const float  &r, const int minLevel, const int maxLevel, const bool bRight) const
 {
+    cout << "FRAME GET FEATURES BEING USED!" << endl;
     vector<size_t> vIndices;
     vIndices.reserve(N);
 
     float factorX = r;
     float factorY = r;
-
+    //r = window size
+    //mnMinX = frame parameter
+    //minLevel - maxLevel
     const int nMinCellX = max(0,(int)floor((x-mnMinX-factorX)*mfGridElementWidthInv));
     if(nMinCellX>=FRAME_GRID_COLS)
     {
@@ -688,6 +692,7 @@ vector<size_t> Frame::GetFeaturesInArea(const float &x, const float  &y, const f
 
     const bool bCheckLevels = (minLevel>0) || (maxLevel>=0);
 
+    // Iterate through frame bounds 
     for(int ix = nMinCellX; ix<=nMaxCellX; ix++)
     {
         for(int iy = nMinCellY; iy<=nMaxCellY; iy++)

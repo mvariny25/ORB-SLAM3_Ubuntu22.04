@@ -1,0 +1,1 @@
+./Examples/Monocular/mono_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular/fg.yaml ~/colcon_ws/datasets/fg7 ./Examples/fg7/timesteps.txt dataset-fg7
